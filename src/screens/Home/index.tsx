@@ -1,12 +1,15 @@
 import React from 'react';
-
+import {Header} from '../../components';
 import {Container, Title} from './styles';
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <Title>Daniel</Title>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Title>Daniel</Title>
+      </Container>
+    </>
   );
 };
 
