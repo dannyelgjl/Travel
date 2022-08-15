@@ -42,9 +42,9 @@ Esse projeto foi desenvolvido com a seguinte tecnologia:
 
 ## 💻 Projeto
 
-Pokémon World!
+Travel!
 
-- Encontre seus Pokémons favoritos e tenha informações detalhadas sobre cada um deles com apenas um click!
+- Projeto ainda está em fase de desenvolvimento! Em breve você conseguirá localizar as passagens disponíveis pora a localidade desejada! ✈️
 
 ## 🎮 Start
 
@@ -56,7 +56,7 @@ Obs: Caso não tenha seu ambiente configurado para rodar o App [clique aqui](htt
 
 ## 🤖 APK
 
-APK disponível [clique aqui.](https://drive.google.com/file/d/1QHbRmqlmJL1yfyXFI9aF28xMu0JkEhE_/view?usp=sharing)
+APK ainda não está disponível!😢
 
 ## 🤔 Como contribuir
 
