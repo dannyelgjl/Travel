@@ -6,6 +6,7 @@ export const Container = styled.View`
   height: 150px;
   background-color: #fff;
   border-radius: ${mvs(8)}px;
+  margin-bottom: ${mvs(24)}px;
 `;
 
 export const ValueContainer = styled.View`

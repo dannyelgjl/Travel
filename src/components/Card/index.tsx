@@ -1,4 +1,5 @@
 import React from 'react';
+import {View} from 'react-native';
 
 import {
   Container,
@@ -15,26 +16,37 @@ import {
   ArrivalContainer,
 } from './styles';
 
-const Card = () => {
+interface ICardProps {
+  item: {
+    id: number;
+    hour: string;
+    city: string;
+    time: string;
+    convencional: string;
+    value: string;
+  };
+}
+
+const Card = ({item}: ICardProps) => {
   return (
     <Container>
       <ValueContainer>
-        <ValueTitle>R$ 2.773</ValueTitle>
+        <ValueTitle>R$ {item.value}</ValueTitle>
       </ValueContainer>
 
       <Content>
         <InforContainer>
-          <Hour>20:30</Hour>
-          <City>João Pessoa</City>
+          <Hour>{item.hour}</Hour>
+          <City>{item.city}</City>
         </InforContainer>
         <TimeTravelContainer>
-          <Time>6h</Time>
+          <Time>{item.time}</Time>
           <TimeTravel>{'=>'}</TimeTravel>
         </TimeTravelContainer>
 
         <ArrivalContainer>
           <Arrival>21h30</Arrival>
-          <Arrival>Convencional</Arrival>
+          <Arrival>{item.convencional}</Arrival>
         </ArrivalContainer>
       </Content>
     </Container>
