@@ -4,7 +4,7 @@ import {mvs} from 'react-native-size-matters';
 export const Label = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  color: ${({theme}) => theme.colors.orage};
+  color: ${({theme}) => theme.colors.orange};
   margin-bottom: ${mvs(4)}px;
 `;
 

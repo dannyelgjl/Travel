@@ -4,6 +4,11 @@ const {Navigator, Screen} = createStackNavigator();
 import {Home, Detail} from '../screens';
 import {SCREEN} from './constant/route-name';
 
+export type RootStackParamsList = {
+  Home: undefined;
+  Detail: undefined;
+};
+
 const Routes: React.FC = () => (
   <Navigator
     screenOptions={{

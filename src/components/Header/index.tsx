@@ -1,11 +1,8 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/core';
 import {View} from 'react-native';
+import {IHeaderProps} from './types';
 import {Container, Logo, ArrowGoBack, Icon} from './styles';
-
-interface IHeaderProps {
-  goback?: boolean;
-}
 
 const Header = ({goback}: IHeaderProps) => {
   const navigation = useNavigation();
@@ -18,7 +15,7 @@ const Header = ({goback}: IHeaderProps) => {
     <Container>
       {goback ? (
         <ArrowGoBack onPress={handleGoBack}>
-          <Icon>{'<='}</Icon>
+          <Icon />
         </ArrowGoBack>
       ) : (
         <View />

@@ -1,12 +1,11 @@
 import React from 'react';
-import {View} from 'react-native';
-
+import {ICardProps} from './types';
 import {
   Container,
   ValueContainer,
   ValueTitle,
   Content,
-  Hour,
+  Uf,
   City,
   TimeTravel,
   InforContainer,
@@ -16,37 +15,26 @@ import {
   ArrivalContainer,
 } from './styles';
 
-interface ICardProps {
-  item: {
-    id: number;
-    hour: string;
-    city: string;
-    time: string;
-    convencional: string;
-    value: string;
-  };
-}
-
 const Card = ({item}: ICardProps) => {
   return (
     <Container>
       <ValueContainer>
-        <ValueTitle>R$ {item.value}</ValueTitle>
+        <ValueTitle>R$ 2.980</ValueTitle>
       </ValueContainer>
 
       <Content>
         <InforContainer>
-          <Hour>{item.hour}</Hour>
-          <City>{item.city}</City>
+          <Uf>{item?.uf}</Uf>
+          <City>{item?.localidade}</City>
         </InforContainer>
         <TimeTravelContainer>
-          <Time>{item.time}</Time>
-          <TimeTravel>{'=>'}</TimeTravel>
+          <Time>{item?.time}</Time>
+          <TimeTravel />
         </TimeTravelContainer>
 
         <ArrivalContainer>
           <Arrival>21h30</Arrival>
-          <Arrival>{item.convencional}</Arrival>
+          <Arrival>Convencional</Arrival>
         </ArrivalContainer>
       </Content>
     </Container>

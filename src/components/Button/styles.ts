@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import {mvs} from 'react-native-size-matters';
 
 export const Container = styled.TouchableOpacity`
-  background-color: ${({theme}) => theme.colors.orage};
+  background-color: ${({theme}) => theme.colors.orange};
   border-radius: 6px;
   width: 100%;
   height: ${mvs(50)}px;

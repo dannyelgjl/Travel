@@ -1,62 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import {Header, Card} from '../../components';
+import {Header, Card, Title} from '../../components';
+import api from '../../services/api';
+import tokenTest from '../../services/token';
 
-import {Container} from './styles';
+import {Container, TitleContainer} from './styles';
 
-const TravelDetail: React.FC = () => {
-  const data = [
-    {
-      id: 1,
-      hour: '20h30',
-      city: 'São Paulo',
-      time: '6h',
-      convencional: 'Convencional',
-      value: ' 2.989',
-    },
-    {
-      id: 2,
-      hour: '20h30',
-      city: 'São Paulo',
-      time: '6h',
-      convencional: 'Convencional',
-      value: '2.989',
-    },
-    {
-      id: 3,
-      hour: '20h30',
-      city: 'São Paulo',
-      time: '6h',
-      convencional: 'Convencional',
-      value: '2.989',
-    },
-    {
-      id: 4,
-      hour: '20h30',
-      city: 'São Paulo',
-      time: '6h',
-      convencional: 'Convencional',
-      value: '2.989',
-    },
-    {
-      id: 5,
-      hour: '20h30',
-      city: 'São Paulo',
-      time: '6h',
-      convencional: 'Convencional',
-      value: '2.989',
-    },
-  ];
+const TravelDetail = () => {
+  const [places, setPlaces] = useState([]);
 
+  useEffect(() => {
+    api
+      .get('localidades', {
+        headers: {
+          Authorization: `Bearer ${tokenTest}`,
+        },
+      })
+      .then(response => {
+        setPlaces(response.data.data);
+        console.log('LOCALIDADES:', response.data.data);
+      });
+  }, []);
   return (
     <>
       <Header goback />
+
       <Container>
+        <TitleContainer>
+          <Title title="Encontre seu destino!" />
+        </TitleContainer>
+
         <FlatList
-          data={data}
+          data={places}
           showsVerticalScrollIndicator={false}
           horizontal={false}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.localidadeId}
           renderItem={({item}) => <Card item={item} />}
         />
       </Container>

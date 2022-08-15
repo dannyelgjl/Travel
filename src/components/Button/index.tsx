@@ -1,11 +1,6 @@
 import React from 'react';
-
+import {IButtonProps} from './types';
 import {Container, Title} from './styles';
-
-interface IButtonProps {
-  title: string;
-  onPress?: () => void;
-}
 
 const Button = ({title, onPress}: IButtonProps) => {
   return (

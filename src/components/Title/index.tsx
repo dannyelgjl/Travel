@@ -1,9 +1,9 @@
 import React from 'react';
-
+import {ITitleProps} from './types';
 import {TitleText} from './styles';
 
-const Title: React.FC = () => {
-  return <TitleText>Compre sua passagem aqui!</TitleText>;
+const Title = ({title}: ITitleProps) => {
+  return <TitleText>{title}</TitleText>;
 };
 
 export default Title;

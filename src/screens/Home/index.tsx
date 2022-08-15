@@ -1,21 +1,24 @@
 import React from 'react';
 import {Header, Title, Button, Input} from '../../components';
 import {useNavigation} from '@react-navigation/core';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {Container, FormContent} from './styles';
-import {SCREEN} from '../../routes/constant/route-name';
+import {RootStackParamsList} from '../../routes';
+
+type HomeScreenProps = StackNavigationProp<RootStackParamsList>;
 
 const Home = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenProps>();
 
   const handleNavigation = () => {
-    navigation.navigate(SCREEN.DETAIL);
+    navigation.navigate('Detail');
   };
 
   return (
     <>
       <Header />
       <Container>
-        <Title />
+        <Title title="Compre sua passagem aqui!" />
 
         <FormContent>
           <Input label="De:" />
@@ -23,7 +26,7 @@ const Home = () => {
           <Input label="Partida:" />
         </FormContent>
 
-        <Button title="Compre já" onPress={handleNavigation} />
+        <Button title="Buscar" onPress={handleNavigation} />
       </Container>
     </>
   );
