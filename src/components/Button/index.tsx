@@ -4,11 +4,12 @@ import {Container, Title} from './styles';
 
 interface IButtonProps {
   title: string;
+  onPress?: () => void;
 }
 
-const Button = ({title}: IButtonProps) => {
+const Button = ({title, onPress}: IButtonProps) => {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <Title>{title}</Title>
     </Container>
   );

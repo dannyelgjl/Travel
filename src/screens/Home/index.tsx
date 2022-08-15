@@ -1,8 +1,16 @@
 import React from 'react';
 import {Header, Title, Button, Input} from '../../components';
+import {useNavigation} from '@react-navigation/core';
 import {Container, FormContent} from './styles';
+import {SCREEN} from '../../routes/constant/route-name';
 
 const Home = () => {
+  const navigation = useNavigation();
+
+  const handleNavigation = () => {
+    navigation.navigate(SCREEN.DETAIL);
+  };
+
   return (
     <>
       <Header />
@@ -15,7 +23,7 @@ const Home = () => {
           <Input label="Partida:" />
         </FormContent>
 
-        <Button title="Compre já" />
+        <Button title="Compre já" onPress={handleNavigation} />
       </Container>
     </>
   );
